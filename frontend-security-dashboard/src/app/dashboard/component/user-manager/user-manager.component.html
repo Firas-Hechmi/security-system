@@ -1,0 +1,55 @@
+<div class="mb1">
+  <button mat-raised-button color="primary" (click)="openAddUserForm('ADD')">Add user</button>
+</div>
+<mat-table [dataSource]="users" class="mat-elevation-z8">
+ 
+    <ng-container matColumnDef="username">
+      <mat-header-cell *matHeaderCellDef> Username</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.username}} </mat-cell>
+    </ng-container>
+  
+
+    <ng-container matColumnDef="firstName">
+      <mat-header-cell *matHeaderCellDef> First Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.firstName}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="lastName">
+      <mat-header-cell *matHeaderCellDef> Last Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.lastName}} </mat-cell>
+    </ng-container>
+  
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="role">
+        <mat-header-cell *matHeaderCellDef> Role </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.role.name}} </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="accountStatus">
+        <mat-header-cell *matHeaderCellDef> Account Status </mat-header-cell>
+        <mat-cell *matCellDef="let element"> <mat-icon color="accent" matTooltip="ACCOUNT IS ACTIVE"
+          *ngIf="element.accountStatus=='ACTIVE'">check_circle</mat-icon> 
+          <mat-icon color="primary" matTooltip="ACCOUNT IS LOCKED"
+          *ngIf="element.accountStatus=='LOCKED'">lock</mat-icon>
+          <mat-icon color="warn" matTooltip="ACCOUNT IS CLOSED"
+          *ngIf="element.accountStatus=='CLOSED'">remove_circle</mat-icon>
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <mat-header-cell *matHeaderCellDef> Actions </mat-header-cell>
+        <mat-cell *matCellDef="let element"> 
+          <span *ngFor="let action of element.actions">
+            <mat-icon class="edit-icon" (click)="openEditUserForm(action,element.username)" *ngIf=" action == 'EDIT'">edit_square</mat-icon>
+          </span> 
+        </mat-cell>
+      </ng-container>
+  
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>

@@ -1,0 +1,41 @@
+<ng-http-loader 
+[backgroundColor]="'#0d47a1'"
+[extraDuration]="300"
+[backdropBackgroundColor]="'#000000'"
+></ng-http-loader>
+<mat-sidenav-container autosize>
+    <mat-sidenav #sidenav mode="side" opened="true">
+  
+      <mat-nav-list>
+         <mat-list-item (click)="isExpanded =!isExpanded">
+            <mat-icon mat-list-icon class="chevron_button" [ngClass]="{rotated:isExpanded}">
+              chevron_right
+            </mat-icon>
+         </mat-list-item>
+
+         <mat-list-item [routerLink]="'user-manager'">
+          <mat-icon>persong</mat-icon>
+          <span *ngIf="isExpanded" class="menu-item">User manager</span>
+         </mat-list-item>
+         <mat-list-item [routerLink]="'request-monitor'">
+          <mat-icon>compare_arrows</mat-icon>
+          <span *ngIf="isExpanded" class="menu-item">Request monitor</span>
+         </mat-list-item>
+         <mat-list-item [routerLink]="'log-monitor'">
+          <mat-icon>format_list_bulleted</mat-icon>
+          <span *ngIf="isExpanded" class="menu-item">Log monitor</span>
+         </mat-list-item>
+ 
+      </mat-nav-list>
+      
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+      <app-dashboard-header></app-dashboard-header>
+      <div id="container">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  
+  </mat-sidenav-container>
+  

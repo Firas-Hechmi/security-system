@@ -1,0 +1,42 @@
+<mat-card class="login-card">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="login-header">
+            <button mat-fab color="primary">
+                <mat-icon>person</mat-icon>
+             </button>
+        </div>
+    <mat-card-content>
+        <div *ngIf="!isOtpRequired">
+        <p>
+            <mat-form-field appearance="fill" color="primary">
+                <mat-label>Username</mat-label>
+                 <input matInput formControlName="username">
+                 <mat-icon matSuffix color="primary">person</mat-icon>
+            </mat-form-field>
+        </p>
+        <p>
+            <mat-form-field appearance="fill" color="primary">
+                <mat-label>Password</mat-label>
+                <input matInput formControlName="password" [type]="hidePassword ? 'password' : 'text'" >
+                <button mat-icon-button matSuffix (click)="hidePassword = !hidePassword">
+                    <mat-icon color="primary">{{hidePassword ? 'visibility_off' : 'visibility' }}</mat-icon>
+                </button>
+            </mat-form-field>
+        </p>
+        </div>
+        <div *ngIf="isOtpRequired">
+            <p>Please enter the code sent to your email to access your account</p>
+            <p>
+                <mat-form-field appearance="fill" color="primary">
+                    <mat-label>Code</mat-label>
+                     <input matInput formControlName="otp">
+                </mat-form-field>
+            </p>
+        </div>
+        <p class="errorLogin" *ngIf="errorLogin !== ''">{{errorLogin}}</p>
+    </mat-card-content>
+    <mat-card-footer>
+        <button mat-raised-button type="submit" color="primary">Login</button>
+    </mat-card-footer>
+</form>
+</mat-card>

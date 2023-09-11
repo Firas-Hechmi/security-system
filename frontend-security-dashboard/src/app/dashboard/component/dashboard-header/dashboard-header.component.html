@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">
+    <span>Security Dashboard</span>
+    <span class="header-spacer"></span>
+    <button mat-mini-fab color="warn" (click)="logout()" >
+        <mat-icon>logout</mat-icon>
+    </button>
+</mat-toolbar>
+<mat-toolbar  class="sub-header">        
+    <button mat-icon-button >
+      <mat-icon class="sub-header-icon">{{currentComponentIcon}}</mat-icon>
+    </button>
+    <span style="font-size: 16px;">{{currentComponentTitle}}</span>
+</mat-toolbar>

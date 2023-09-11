@@ -1,0 +1,12 @@
+.mb1{
+    margin-bottom: 20px;
+}
+
+.edit-icon{
+    color: #e0a840;
+    margin-right: 4px;
+}
+
+.edit-icon , .delete-icon{
+    cursor: pointer;
+}

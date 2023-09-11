@@ -1,0 +1,15 @@
+mat-cell{
+    padding: 10px;
+}
+
+.display-flex-inline{
+    display: inline;
+}
+
+.mb1{
+    margin-bottom: 10px;
+}
+
+.warn-icon{
+    color: #e0a840;
+}

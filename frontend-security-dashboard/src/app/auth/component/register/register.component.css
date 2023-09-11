@@ -1,0 +1,40 @@
+.register-card{    
+    width: 25%;
+     margin-left: auto;
+     margin-right: auto;
+     margin-top: 3%;
+ }
+ 
+ .register-header{
+     margin-bottom: 8%;
+     text-align: center;
+ }
+ 
+ .register-card mat-card-footer{
+        text-align: center;
+        margin-bottom: -32px;
+ }
+ .register-card .mat-form-field{
+     width: 85%;
+ }
+ .register-card p{
+     text-align: center;
+ }
+ .errorRegister{
+     margin-left: auto;
+     margin-right: auto;
+     padding: 0.4em 0.75em 0.4em 0.75em;
+     width: 80%;
+     color: white;
+     background-color: #c62828;
+ }
+
+ .registerSuccess{
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.4em 0.75em 0.4em 0.75em;
+    width: 80%;
+    color: white;
+    background-color: rgb(13, 107, 13);
+}
+ 

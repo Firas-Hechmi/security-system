@@ -1,0 +1,19 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$frontend-security-dashboard-primary: mat.define-palette(mat.$blue-palette,900);
+$frontend-security-dashboard-accent:  mat.define-palette(mat.$green-palette,800);
+
+$frontend-security-dashboard-warn: mat.define-palette(mat.$red-palette,800);
+
+$frontend-security-dashboard-theme: mat.define-light-theme((
+  color: (
+    primary: $frontend-security-dashboard-primary,
+    accent: $frontend-security-dashboard-accent,
+    warn: $frontend-security-dashboard-warn,
+  )
+));
+
+@include mat.all-component-themes($frontend-security-dashboard-theme);
+

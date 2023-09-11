@@ -1,0 +1,17 @@
+.header-spacer{
+    flex: 1 1 auto;
+  }
+
+  .sub-header{
+    height:30px;
+    background-color: #5e769c;
+    color: white;
+  }
+
+  .sub-header-icon{
+    font-size: 19px;
+  }
+
+  .sub-header-title{
+    font-size: 19px;
+  }

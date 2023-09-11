@@ -1,0 +1,45 @@
+<form [formGroup]="userForm" (submit)="submitUserForm()">
+        <div mat-dialog-content>
+            <p class="text-align-center">
+                <mat-form-field appearance="fill" color="primary" class="pr-2">
+                    <mat-label>First Name</mat-label>
+                     <input matInput formControlName="firstName">
+                </mat-form-field>
+                <mat-form-field appearance="fill" color="primary">
+                    <mat-label>Last Name</mat-label>
+                     <input matInput formControlName="lastName">
+                </mat-form-field>
+            </p>
+            <p class="text-align-center"> 
+                <mat-form-field appearance="fill" color="primary" class="pr-2">
+                    <mat-label>Email</mat-label>
+                     <input matInput formControlName="email">
+                </mat-form-field>
+                <mat-form-field appearance="fill" color="primary">
+                    <mat-label>Phone Number</mat-label>
+                     <input matInput formControlName="phoneNumber">
+                </mat-form-field>
+            </p>
+        
+            <p class="text-align-center">
+                <mat-form-field appearance="fill" color="primary" class="pr-2">
+                    <mat-label>Account status</mat-label>
+                    <mat-select formControlName="accountStatus">
+                        <mat-option *ngFor="let accountStatus of listAccountStatus" [value]="accountStatus">{{accountStatus}}</mat-option>
+                      </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="fill" color="primary">
+                    <mat-label>Role</mat-label>
+                    <mat-select formControlName="role">
+                      <mat-option *ngFor="let role of roles" [value]="role.name">{{role.name}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </p>
+            <p class="error-user-form text-align-center" *ngIf="errorMsg !== '' " >{{errorMsg}}</p>
+            <p class="success-user-form text-align-center" *ngIf="successMsg !== '' ">{{successMsg}}</p>
+        </div>
+        <div mat-dialog-actions>
+          <button mat-flat-button mat-dialog-close color="warn">Close</button>
+          <button mat-flat-button color="accent" type="submit">{{buttonLabel}}</button>
+        </div>
+</form>
